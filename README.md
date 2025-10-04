@@ -22,3 +22,5 @@ Submit any feedback and feature requests:
 ## Support
 
 [support me here](https://buymeacoffee.com/ivocreator)
+
+Contributions are also welcome!
