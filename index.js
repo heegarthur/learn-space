@@ -86,17 +86,15 @@ function updateProgressBar(currentXP, xpNeeded) {
 
 function beweeg(seconds) {
   const img = document.getElementById("runner");
-  const screenWidth = window.innerWidth - img.width; // max positie
-  const beweegXp = seconds % 1800; // waar in de cyclus je zit
+  const screenWidth = window.innerWidth - img.width; 
+  const beweegXp = seconds % 1800; 
 
-  // bepalen welke richting
   if (seconds % 3600 < 1800) {
-    // links → rechts
-    let progress = beweegXp / 1800; // waarde tussen 0 en 1
+
+    let progress = beweegXp / 1800; 
     img.style.left = (progress * screenWidth) + "px";
   } else {
-    // rechts → links
-    let progress = beweegXp / 1800; // waarde tussen 0 en 1
+    let progress = beweegXp / 1800; 
     img.style.left = ((1 - progress) * screenWidth) + "px";
   }
 }
@@ -105,9 +103,9 @@ function showFireworks() {
   const fireworks = document.querySelectorAll('.firework');
   const earth = document.getElementById("runner");
   fireworks.forEach(el => {
-    el.style.display = 'block'; // zichtbaar maken
+    el.style.display = 'block'; 
   });
-  document.body.style.backgroundColor = "black"; // donkere achtergrond
+  document.body.style.backgroundColor = "black"; 
   earth.style.display = "none";
 }
 
