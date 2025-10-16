@@ -86,15 +86,15 @@ function updateProgressBar(currentXP, xpNeeded) {
 
 function beweeg(seconds) {
   const img = document.getElementById("runner");
-  const screenWidth = window.innerWidth - img.width; 
-  const beweegXp = seconds % 1800; 
+  const screenWidth = window.innerWidth - img.width;
+  const beweegXp = seconds % 1800;
 
   if (seconds % 3600 < 1800) {
 
-    let progress = beweegXp / 1800; 
+    let progress = beweegXp / 1800;
     img.style.left = (progress * screenWidth) + "px";
   } else {
-    let progress = beweegXp / 1800; 
+    let progress = beweegXp / 1800;
     img.style.left = ((1 - progress) * screenWidth) + "px";
   }
 }
@@ -103,9 +103,9 @@ function showFireworks() {
   const fireworks = document.querySelectorAll('.firework');
   const earth = document.getElementById("runner");
   fireworks.forEach(el => {
-    el.style.display = 'block'; 
+    el.style.display = 'block';
   });
-  document.body.style.backgroundColor = "black"; 
+  document.body.style.backgroundColor = "black";
   earth.style.display = "none";
 }
 
@@ -120,5 +120,29 @@ function hideFireworks() {
   earth.style.display = "block";
 
 }
+
+function addTime() {
+  let timeToAdd = parseInt(document.getElementById("input-number").value);
+
+
+  if (timeToAdd > 9 && timeToAdd < 121) {
+    console.log(timeToAdd)
+    timeToAdd = timeToAdd * 60
+    levelUp(timeToAdd);
+    document.getElementById("input-number").style.backgroundColor = "#9dff89";
+    document.getElementById("input-number").value = "";
+    document.getElementById("input-number-button").style.backgroundColor = "#9dff89";
+    document.getElementById("timeAlert").style.display = "none";
+  } else {
+    document.getElementById("input-number").style.backgroundColor = "#ff0000b9";
+    document.getElementById("input-number-button").style.backgroundColor = "#ff0000b9";
+    document.getElementById("timeAlert").style.display = "block";
+  }
+
+}
+
+
+
+
 counting();
 hideFireworks()
