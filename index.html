@@ -19,7 +19,7 @@
     <div class="firework"></div>
     <div class="firework"></div>
     <div class="firework"></div>
-    
+
     <div id="level"></div><br>
     <div id="progress-bar">
         <div id="progress"></div>
@@ -33,37 +33,47 @@
         <div>hours: <span id="hours" class="showtimes"></span></div>
         <div>minutes: <span id="minutes" class="showtimes"></span></div>
         <div>seconds: <span id="seconds" class="showtimes"></span></div>
-    </div>
-    <br><input type="text" id="searchInput" placeholder="search..." onkeyup="search()"><br><br>
+    </div><br>
+    <input id="input-number" aria-label="time focussed" type="number" min="10" max="120">
+    <button id="input-number-button" onclick="addTime()">add focussed time (minutes)
+        <span id="timeAlert">time must me between 120 and 10 minutes</span>
+    </button>
+    <br><br><input type="text" id="searchInput" placeholder="search..." onkeyup="search()"><br><br>
     <div id="track">
         <img id="runner" src="earth.png" alt="runner">
     </div>
-    <button class="studygo wrts study go" onclick="openurl('https://studygo.com')">studygo</button>
-    <button class="github grades ai gradesai" onclick="openurl('https://heegarthur.github.io/gradesAI/')">grades
+    <button class="button" class="studygo wrts study go" onclick="openurl('https://studygo.com')">studygo</button>
+    <button class="button" class="github grades ai gradesai"
+        onclick="openurl('https://heegarthur.github.io/gradesAI/')">grades
         AI</button>
-    <button class="pomodoro timer pomodorotimer" onclick="openurl('https://pomofocus.io/')">pomodoro timer</button>
-    <button class="coco cocotimer timer stopwatch"
+    <button class="button" class="pomodoro timer pomodorotimer" onclick="openurl('https://pomofocus.io/')">pomodoro
+        timer</button>
+    <button class="button" class="coco cocotimer timer stopwatch"
         onclick="openurl('https://cocotimer.com/stopwatch')">stopwatch</button>
-    <button class="randomtimer random timer github quest"
+    <button class="button" class="randomtimer random timer github quest"
         onclick="openurl('https://heegarthur.github.io/ivoarthur/smallwebsites//random_timer/randomtime.html')">random
         timer</button>
-    <button class="flashcard flashcards remnote" onclick="openurl('https://www.remnote.com/')">flashcards</button>
-    <button class="quizlet quiz" onclick="openurl('https://quizlet.com/nl')">quizlet</button>
-    <button class="studocu note notes" onclick="openurl('https://www.studocu.com/en-us/home')">notes</button>
-    <button class="magister schedule" onclick="openurl('https://magister.nl')">magister</button>
-    <button class="notebook note notes ai notebooklm lm"
+    <button class="button" class="flashcard flashcards remnote"
+        onclick="openurl('https://www.remnote.com/')">flashcards</button>
+    <button class="button" class="quizlet quiz" onclick="openurl('https://quizlet.com/nl')">quizlet</button>
+    <button class="button" class="studocu note notes"
+        onclick="openurl('https://www.studocu.com/en-us/home')">notes</button>
+    <button class="button" class="magister schedule" onclick="openurl('https://magister.nl')">magister</button>
+    <button class="button" class="notebook note notes ai notebooklm lm"
         onclick="openurl('https://notebooklm.google.com')">notebooklm</button>
-    <button class="clock time relaxingclock relaxing" onclick="openurl('https://www.relaxingclock.com/')">relaxing
+    <button class="button" class="clock time relaxingclock relaxing"
+        onclick="openurl('https://www.relaxingclock.com/')">relaxing
         clock</button>
-    <button class="classic music spotify playlist relaxing relax sound"
+    <button class="button" class="classic music spotify playlist relaxing relax sound"
         onclick="openurl('https://open.spotify.com/playlist/4MxPphYgkjR9C9PPFZ0aO1')">classic music</button>
-    <button class="mindmap mind map simplemindmap simple" onclick="openurl('https://simplemindmap.com/')">simple
+    <button class="button" class="mindmap mind map simplemindmap simple"
+        onclick="openurl('https://simplemindmap.com/')">simple
         mindmap</button>
-    <button class="study sound youtube studysound classroum"
+    <button class="button" class="study sound youtube studysound classroum"
         onclick="openurl('https://www.youtube.com/watch?v=ptDOgiwSzB8&pp=ygUac3R1ZHkgc291bmQgZXhhbSBjbGFzc3Jvb20%3D')">classroom
         sound</button>
-    <button class="chatgpt chat gpt ai" onclick="openurl('https://chatgpt.com/')">chat gpt</button>
-    <button class="learn spanish learn dict" onclick="openurl('https://www.spanishdict.com/learn')">learn
+    <button class="button" class="chatgpt chat gpt ai" onclick="openurl('https://chatgpt.com/')">chat gpt</button>
+    <button class="button" class="learn spanish learn dict" onclick="openurl('https://www.spanishdict.com/learn')">learn
         spanish</button>
 
     <script src="index.js"></script>
