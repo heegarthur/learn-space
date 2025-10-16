@@ -24,7 +24,7 @@ body {
   color: #333333;
 }
 
-button {
+.button {
   border-radius: 10px;
   border-color: #FFB347;
   background-color: #A8E6CF;
@@ -37,7 +37,7 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.button:hover {
   border-color: #A8E6CF;
   background-color: #ff9500;
   color: white;
@@ -145,18 +145,27 @@ button:hover {
   }
 }
 
+#input-number-button{
+  padding: 10px 10px;
+  border-radius: 20px;
+  border-width: 0px;
+  background-color: #ffb347;
+}
 
+#input-number{
+  padding: 10px 20px;
+  border-radius: 20px;
+  background-color: #ff8000;
+  border-width: 0px;
+}
+#input-number:focus{
+  border-radius: 10px;
+}
 
-
-
-
-
-
-
-
-
-
-
+#timeAlert{
+  color: #ffffff;
+  display: none;
+}
 
 
 @keyframes firework {
