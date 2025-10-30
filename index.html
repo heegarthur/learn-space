@@ -1,89 +1,311 @@
-<!DOCTYPE html>
-<html lang="en">
+.showtimes {
+  color: #FFB347;
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>learnzone</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Baumans&family=Bowlby+One+SC&family=Chango&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Fuzzy+Bubbles:wght@400;700&family=Gabriela&family=Kalam:wght@300;400;700&family=Pompiere&display=swap"
-        rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="logo.ico">
-</head>
+  box-shadow: 0px 0px 10px #000000;
+  line-height: 2cap;
+  border-radius: 100px;
+  padding: 2px 2px;
+}
 
-<body>
+#times {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight: lighter;
+  font-size: x-large;
+  color: #333333;
+}
+
+body {
+  margin: auto;
+  width: 50%;
+  text-align: center;
+  align-items: center;
+  line-height: 2.5cap;
+  background: #ffffff;
+  color: #333333;
+}
+
+.button {
+  border-radius: 10px;
+  border-color: #FFB347;
+  background-color: #A8E6CF;
+  transition: 0.15s ease-in-out;
+  border-width: 1px;
+  padding: 10px 3px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: medium;
+  color: #333333;
+  cursor: pointer;
+}
+
+.button:hover {
+  border-color: #A8E6CF;
+  background-color: #ff9500;
+  color: white;
+  transform: scale(1.05);
+}
+
+#scoreshow {
+  font-family: fantasy;
+  font-style: italic;
+  color: #ff9500;
+  box-shadow: 0px 0px 10px #000000;
+  border-radius: 100px;
+  padding: 2px 2px;
+}
+
+#searchInput {
+  border-radius: 10px;
+  outline: 2px solid #4A90E2;
+  border: 0;
+  background-color: #FFF8E1;
+  outline-offset: 3px;
+  padding: 10px 1rem;
+  transition: 0.25s;
+  font-size: 16px;
+  color: #333333;
+  font-size: 18px;
+}
+
+#searchInput:hover {
+  transform: scale(105%);
+  outline-style: dashed;
+}
+
+#searchInput:focus {
+  outline-offset: 5px;
+  background-color: #A8E6CF;
+  outline: 2px solid #4A90E2;
+}
 
 
-    <div class="firework"></div>
-    <div class="firework"></div>
-    <div class="firework"></div>
 
-    <div id="level"></div><br>
-    <div id="progress-bar">
-        <div id="progress"></div>
-    </div>
-    <br>
-    <div id="xp-text"></div>
-    </div><br>
-    <div id="times"><br>
-        <div>seconds focussed: <span id="scoreshow">0</span></div>
-        <div>days: <span id="days" class="showtimes"></span></div>
-        <div>hours: <span id="hours" class="showtimes"></span></div>
-        <div>minutes: <span id="minutes" class="showtimes"></span></div>
-        <div>seconds: <span id="seconds" class="showtimes"></span></div>
-    </div><br>
-    <input id="input-number" aria-label="time focussed" type="number" min="10" max="120">
-    <button id="input-number-button" onclick="addTime()">add focussed time (minutes)
-        <span id="timeAlert">time must me between 120 and 10 minutes</span>
-    </button>
-    <br><br><input type="text" id="searchInput" placeholder="search..." onkeyup="search()"><br><br>
-    <div id="track">
-        <img id="runner" src="earth.png" alt="runner">
-    </div>
-    <button class="button" class="studygo wrts study go" onclick="openurl('https://studygo.com')">studygo</button>
-    <button class="button" class="github grades ai gradesai"
-        onclick="openurl('https://heegarthur.github.io/gradesAI/')">grades
-        AI</button>
-    <button class="button" class="pomodoro timer pomodorotimer" onclick="openurl('https://pomofocus.io/')">pomodoro
-        timer</button>
-    <button class="button" class="coco cocotimer timer stopwatch"
-        onclick="openurl('https://cocotimer.com/stopwatch')">stopwatch</button>
-    <button class="button" class="randomtimer random timer github quest"
-        onclick="openurl('https://heegarthur.github.io/ivoarthur/smallwebsites//random_timer/randomtime.html')">random
-        timer</button>
-    <button class="button" class="flashcard flashcards remnote"
-        onclick="openurl('https://www.remnote.com/')">flashcards</button>
-    <button class="button" class="quizlet quiz" onclick="openurl('https://quizlet.com/nl')">quizlet</button>
-    <button class="button" class="studocu note notes"
-        onclick="openurl('https://www.studocu.com/en-us/home')">notes</button>
-    <button class="button" class="magister schedule" onclick="openurl('https://magister.nl')">magister</button>
-    <button class="button" class="notebook note notes ai notebooklm lm"
-        onclick="openurl('https://notebooklm.google.com')">notebooklm</button>
-    <button class="button" class="clock time relaxingclock relaxing"
-        onclick="openurl('https://www.relaxingclock.com/')">relaxing
-        clock</button>
-    <button class="button" class="classic music spotify playlist relaxing relax sound"
-        onclick="openurl('https://open.spotify.com/playlist/4MxPphYgkjR9C9PPFZ0aO1')">classic music</button>
-    <button class="button" class="mindmap mind map simplemindmap simple"
-        onclick="openurl('https://simplemindmap.com/')">simple
-        mindmap</button>
-    <button class="button" class="study sound youtube studysound classroum"
-        onclick="openurl('https://www.youtube.com/watch?v=ptDOgiwSzB8&pp=ygUac3R1ZHkgc291bmQgZXhhbSBjbGFzc3Jvb20%3D')">classroom
-        sound</button>
-    <button class="button" class="chatgpt chat gpt ai" onclick="openurl('https://chatgpt.com/')">chat gpt</button>
-    <button class="button" class="learn spanish learn dict" onclick="openurl('https://www.spanishdict.com/learn')">learn
-        spanish</button>
-    <button class="button" class="notion note notes notebook book" onclick="openurl('https://notion.so/')">notion</button>
-    <button class="button" class="I miss my libary study sound background" onclick="openurl('https://www.imissmylibrary.com/')">libary space</button>
-    <button class="button" class="sleep screen awake keep on" onclick="openurl('https://screenawake.com/')">keep screen awake</button>
-    <button class="button" class="vscode visual studio code vs code programming coding" onclick="openurl('https://vscode.dev/')">programming space</button>
-    <button class="button" class="to do list todo todolist dolist tasks" onclick="openurl('https://onlinenotepad.app/todo')">to-do list</button>
-    <button class="button" class="calender agenda google" onclick="openurl('https://calendar.google.com/calendar/')">planner</button>
-    <script src="index.js"></script>
-    <link rel="stylesheet" href="index.css">
+#progress-bar {
+  text-align: center;
+  align-items: center;
+  margin: auto;
+  width: 100%;
+  height: 20px;
+  border: 4px solid #2142ff;
 
-</body>
+  border-radius: 10px;
+  background: #ff6600;
 
-</html>
+  box-shadow: 0px 0px 10px #000000;
+}
+
+#progress {
+  height: 100%;
+  background: #2142ff;
+
+  transition: width 1s ease;
+}
+
+#xp-text {
+  font-size: larger;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: #333333;
+  box-shadow: 0px 0px 10px #000000;
+  border-radius: 100px;
+  font-weight: 700;
+}
+
+#level {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: larger;
+  color: #333333;
+  font-weight: 900;
+  font-size: xx-large;
+  box-shadow: 0px 0px 10px #000000;
+  border-radius: 100px;
+  padding: 2px 2px;
+
+}
+
+#runner {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 80px;
+  transition: left 0.8s ease;
+  z-index: -1;
+  width: 250px;
+  height: 250px;
+  opacity: 0.5;
+  box-shadow: 0px 0px 100px #ffffff;
+  animation: turn 1800s linear infinite;
+}
+
+@keyframes turn {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#input-number-button{
+  padding: 10px 10px;
+  border-radius: 20px;
+  border-width: 0px;
+  background-color: #ffb347;
+}
+
+#input-number{
+  padding: 10px 20px;
+  border-radius: 20px;
+  background-color: #ff80007c;
+  border-width: 2px;
+  border-color: #ff8000;
+  border-style: solid;
+}
+#input-number:focus{
+  border-radius: 10px;
+}
+
+#timeAlert{
+  color: #ffffff;
+  display: none;
+}
+
+
+@keyframes firework {
+  0% {
+    transform: translate(var(--x), var(--initialY));
+    width: var(--initialSize);
+    opacity: 1;
+  }
+
+  50% {
+    width: 0.5vmin;
+    opacity: 1;
+  }
+
+  100% {
+    width: var(--finalSize);
+    opacity: 0;
+  }
+}
+
+
+.firework,
+.firework::before,
+.firework::after {
+  --initialSize: 0.5vmin;
+  --finalSize: 45vmin;
+  --particleSize: 0.2vmin;
+  --color1: yellow;
+  --color2: khaki;
+  --color3: white;
+  --color4: lime;
+  --color5: gold;
+  --color6: mediumseagreen;
+  --y: -30vmin;
+  --x: -50%;
+  --initialY: 60vmin;
+  content: "";
+  animation: firework 2s infinite;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, var(--y));
+  width: var(--initialSize);
+  aspect-ratio: 1;
+  background:
+
+
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 50% 0%,
+    radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 100% 50%,
+    radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 50% 100%,
+    radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 0% 50%,
+
+    radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 80% 90%,
+    radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 95% 90%,
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 90% 70%,
+    radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 100% 60%,
+    radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 55% 80%,
+    radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 70% 77%,
+
+    radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 22% 90%,
+    radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 45% 90%,
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 33% 70%,
+    radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 10% 60%,
+    radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 31% 80%,
+    radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 28% 77%,
+    radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 13% 72%,
+
+    radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 80% 10%,
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 95% 14%,
+    radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 90% 23%,
+    radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 100% 43%,
+    radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 85% 27%,
+    radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 77% 37%,
+    radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 60% 7%,
+
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 22% 14%,
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 45% 20%,
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 33% 34%,
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 10% 29%,
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 31% 37%,
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 28% 7%,
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 13% 42%;
+  background-size: var(--initialSize) var(--initialSize);
+  background-repeat: no-repeat;
+}
+
+.firework::before {
+  --x: -50%;
+  --y: -50%;
+  --initialY: -50%;
+  transform: translate(-50%, -50%) rotate(40deg) scale(1.3) rotateY(40deg);
+
+}
+
+.firework::after {
+  --x: -50%;
+  --y: -50%;
+  --initialY: -50%;
+
+  transform: translate(-50%, -50%) rotate(170deg) scale(1.15) rotateY(-30deg);
+
+}
+
+.firework:nth-child(2) {
+  --x: 30vmin;
+}
+
+.firework:nth-child(2),
+.firework:nth-child(2)::before,
+.firework:nth-child(2)::after {
+  --color1: pink;
+  --color2: violet;
+  --color3: fuchsia;
+  --color4: orchid;
+  --color5: plum;
+  --color6: lavender;
+  --finalSize: 40vmin;
+  left: 30%;
+  top: 60%;
+  animation-delay: -0.25s;
+}
+
+.firework:nth-child(3) {
+  --x: -30vmin;
+  --y: -50vmin;
+}
+
+.firework:nth-child(3),
+.firework:nth-child(3)::before,
+.firework:nth-child(3)::after {
+  --color1: cyan;
+  --color2: lightcyan;
+  --color3: lightblue;
+  --color4: PaleTurquoise;
+  --color5: SkyBlue;
+  --color6: lavender;
+  --finalSize: 35vmin;
+  left: 70%;
+  top: 60%;
+  animation-delay: -0.4s;
+}
