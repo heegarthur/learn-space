@@ -309,3 +309,55 @@ body {
   top: 60%;
   animation-delay: -0.4s;
 }
+
+
+
+.pauseplay-wrapper {
+  --color: #ff8000;
+  --size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  font-size: var(--size);
+  fill: var(--color);
+}
+
+.pauseplay-wrapper .pauseplay-play {
+  position: absolute;
+  animation: keyframes-fill .5s;
+}
+
+.pauseplay-wrapper .pauseplay-pause {
+  position: absolute;
+  display: none;
+  animation: keyframes-fill .5s;
+}
+
+.pauseplay-wrapper .pauseplay-input:checked ~ .pauseplay-play {
+  display: none;
+}
+
+.pauseplay-wrapper .pauseplay-input:checked ~ .pauseplay-pause {
+  display: block;
+}
+
+.pauseplay-wrapper .pauseplay-input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+@keyframes keyframes-fill {
+  0% {
+    transform: rotate(-180deg) scale(0);
+    opacity: 0;
+  }
+
+  50% {
+    transform: rotate(-10deg) scale(1.2);
+  }
+}
