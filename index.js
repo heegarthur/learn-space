@@ -143,6 +143,58 @@ function addTime() {
 
 
 
+(() => {
+  let jsPaused = false;
+  let backup = {};
+
+  window.pausePlay = function() {
+    if (!jsPaused) {
+      backup = {
+        setTimeout: window.setTimeout,
+        setInterval: window.setInterval,
+        requestAnimationFrame: window.requestAnimationFrame,
+        fetch: window.fetch,
+        XMLHttpRequest: window.XMLHttpRequest,
+        addEventListener: EventTarget.prototype.addEventListener,
+        removeEventListener: EventTarget.prototype.removeEventListener,
+        eval: window.eval,
+        Function: window.Function
+      };
+
+      for (let i = 1; i < 20000; i++) {
+        clearTimeout(i);
+        clearInterval(i);
+        cancelAnimationFrame(i);
+      }
+
+      window.setTimeout = () => {};
+      window.setInterval = () => {};
+      window.requestAnimationFrame = () => {};
+      window.fetch = () => Promise.reject("");
+      window.XMLHttpRequest = function() { return { open(){}, send(){}, setRequestHeader(){}, abort(){} }; };
+      EventTarget.prototype.addEventListener = function() {};
+      EventTarget.prototype.removeEventListener = function() {};
+      window.eval = () => { throw new Error("error"); };
+
+      jsPaused = true;
+    } else {
+      if (!backup.setTimeout) return
+
+      window.setTimeout = backup.setTimeout;
+      window.setInterval = backup.setInterval;
+      window.requestAnimationFrame = backup.requestAnimationFrame;
+      window.fetch = backup.fetch;
+      window.XMLHttpRequest = backup.XMLHttpRequest;
+      EventTarget.prototype.addEventListener = backup.addEventListener;
+      EventTarget.prototype.removeEventListener = backup.removeEventListener;
+      window.eval = backup.eval;
+      window.Function = backup.Function;
+
+      jsPaused = false;
+      window.location.reload();
+    }
+  };
+})();
 
 counting();
 hideFireworks()
