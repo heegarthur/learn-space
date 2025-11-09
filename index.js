@@ -1,4 +1,4 @@
-const apiKey = '';
+let apiKey = '';
 function counting() {
   let score = parseInt(localStorage.getItem('totaltime') || '0', 10);
   const score_element = document.getElementById('scoreshow');
@@ -121,25 +121,7 @@ function hideFireworks() {
 
 }
 
-function addTime() {
-  let timeToAdd = parseInt(document.getElementById("input-number").value);
 
-
-  if (timeToAdd > 9 && timeToAdd < 121) {
-    console.log(timeToAdd)
-    timeToAdd = timeToAdd * 60
-    levelUp(timeToAdd);
-    document.getElementById("input-number").style.backgroundColor = "#9dff89";
-    document.getElementById("input-number").value = "";
-    document.getElementById("input-number-button").style.backgroundColor = "#9dff89";
-    document.getElementById("timeAlert").style.display = "none";
-  } else {
-    document.getElementById("input-number").style.backgroundColor = "#ff0000b9";
-    document.getElementById("input-number-button").style.backgroundColor = "#ff0000b9";
-    document.getElementById("timeAlert").style.display = "block";
-  }
-
-}
 
 
 
@@ -198,6 +180,7 @@ function addTime() {
 
 
 function getQuote() {
+  apiKey = document.getElementById("password").value;
 
   const url = 'https://api.mistral.ai/v1/chat/completions';
 
@@ -229,10 +212,39 @@ function getQuote() {
       document.getElementById("quote").innerText = antwoordTekst;
     })
     .catch(error => {
-      console.error( error);
+      console.error(error);
     });
 
 }
+
+
+
+
+const passwordField = document.getElementById('password');
+const toggleButton = document.getElementById('toggle');
+const copyButton = document.getElementById('copy');
+
+toggleButton.addEventListener('click', () => {
+  if (passwordField.type === 'password') {
+    passwordField.type = 'text';
+    toggleButton.textContent = 'hide';
+  } else {
+    passwordField.type = 'password';
+    toggleButton.textContent = 'show';
+  }
+});
+
+copyButton.addEventListener('click', () => {
+  passwordField.select();
+  document.execCommand('copy');
+  copyButton.textContent = 'copied';
+  setTimeout(() => copyButton.textContent = 'copy', 1500);
+});
+
+
+
+
+
 
 getQuote();
 
