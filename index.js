@@ -1,4 +1,4 @@
-const apiKey = 'en5YzsrzUyfioReoLgEs2HckfFFbeagc';
+const apiKey = '';
 function counting() {
   let score = parseInt(localStorage.getItem('totaltime') || '0', 10);
   const score_element = document.getElementById('scoreshow');
