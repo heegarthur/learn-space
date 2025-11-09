@@ -55,9 +55,7 @@
         <div>minutes: <span id="minutes" class="showtimes"></span></div>
         <div>seconds: <span id="seconds" class="showtimes"></span></div>
     </div><br>
-    <input id="input-number" aria-label="time focussed" type="number" min="10" max="120">
-    <button id="input-number-button" onclick="addTime()">add focussed time (minutes)
-        <span id="timeAlert">time must me between 120 and 10 minutes</span>
+
     </button>
     <br><br><input type="text" id="searchInput" placeholder="search..." onkeyup="search()"><br><br>
     <div id="track">
@@ -109,6 +107,15 @@
     <button class="button" class="to do todo ist todoist plan"
         onclick="openurl('https://www.todoist.com/')">planner</button>
 
+
+
+    <div class="password-container">
+        <input aria-label="api-key"  type="password" id="password" value="" placeholder="enter api key from https://console.mistral.ai/home">
+        <div class="buttons">
+            <button id="toggle">show</button>
+            <button id="copy">copy</button>
+        </div>
+    </div>
     <script src="index.js"></script>
     <link rel="stylesheet" href="index.css">
 
