@@ -361,3 +361,9 @@ body {
     transform: rotate(-10deg) scale(1.2);
   }
 }
+
+#quote{
+  font-family: "Fuzzy Bubbles", static;
+  font-weight: 700;
+  font-size: 20px;
+}
