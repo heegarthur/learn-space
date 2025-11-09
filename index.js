@@ -1,4 +1,4 @@
-
+const apiKey = 'en5YzsrzUyfioReoLgEs2HckfFFbeagc';
 function counting() {
   let score = parseInt(localStorage.getItem('totaltime') || '0', 10);
   const score_element = document.getElementById('scoreshow');
@@ -147,7 +147,7 @@ function addTime() {
   let jsPaused = false;
   let backup = {};
 
-  window.pausePlay = function() {
+  window.pausePlay = function () {
     if (!jsPaused) {
       backup = {
         setTimeout: window.setTimeout,
@@ -167,13 +167,13 @@ function addTime() {
         cancelAnimationFrame(i);
       }
 
-      window.setTimeout = () => {};
-      window.setInterval = () => {};
-      window.requestAnimationFrame = () => {};
+      window.setTimeout = () => { };
+      window.setInterval = () => { };
+      window.requestAnimationFrame = () => { };
       window.fetch = () => Promise.reject("");
-      window.XMLHttpRequest = function() { return { open(){}, send(){}, setRequestHeader(){}, abort(){} }; };
-      EventTarget.prototype.addEventListener = function() {};
-      EventTarget.prototype.removeEventListener = function() {};
+      window.XMLHttpRequest = function () { return { open() { }, send() { }, setRequestHeader() { }, abort() { } }; };
+      EventTarget.prototype.addEventListener = function () { };
+      EventTarget.prototype.removeEventListener = function () { };
       window.eval = () => { throw new Error("error"); };
 
       jsPaused = true;
@@ -195,6 +195,46 @@ function addTime() {
     }
   };
 })();
+
+
+function getQuote() {
+
+  const url = 'https://api.mistral.ai/v1/chat/completions';
+
+  const data = {
+    model: 'mistral-tiny',
+    messages: [
+      { role: 'user', content: 'Tell me a short sentence to motivate me to study for everything, UNIQUE, short' }
+    ],
+    max_tokens: 2000
+  };
+
+  fetch(url, {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${apiKey}`,
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`error: ${response.status} ${response.statusText}`);
+      }
+      return response.json();
+    })
+    .then(apiResponse => {
+      const antwoordTekst = apiResponse.choices[0].message.content;
+      console.log('quote:', antwoordTekst);
+      document.getElementById("quote").innerText = antwoordTekst;
+    })
+    .catch(error => {
+      console.error( error);
+    });
+
+}
+
+getQuote();
 
 counting();
 hideFireworks()
