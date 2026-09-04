@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>learnzone</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baumans&family=Bowlby+One+SC&family=Chango&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Fuzzy+Bubbles:wght@400;700&family=Gabriela&family=Kalam:wght@300;400;700&family=Pompiere&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baumans&family=Bowlby+One+SC&family=Chango&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Fuzzy+Bubbles:wght@400;700&family=Gabriela&family=Jolly+Lodger&family=Kalam:wght@300;400;700&family=Monoton&family=Pompiere&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="logo.ico">
+</head>
+
+<body>
+
+
+    <div class="firework"></div>
+    <div class="firework"></div>
+    <div class="firework"></div>
+
+    <div id="level"></div><br>
+    <div id="progress-bar">
+        <div id="progress"></div>
+    </div>
+    <br>
+    <div id="xp-text"></div>
+    </div><br>
+    <div id="quote"></div><br>
+    <label class="pauseplay-wrapper">
+        <input checked="checked" type="checkbox" class="pauseplay-input" onclick="pausePlay()"">
+        <svg viewBox=" 0 0 384 512" height="1em" xmlns="http://www.w3.org/2000/svg" class="pauseplay-play">
+        <path
+            d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z">
+        </path>
+        </svg>
+        <svg viewBox="0 0 320 512" height="1em" xmlns="http://www.w3.org/2000/svg" class="pauseplay-pause">
+            <path
+                d="M48 64C21.5 64 0 85.5 0 112V400c0 26.5 21.5 48 48 48H80c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48H48zm192 0c-26.5 0-48 21.5-48 48V400c0 26.5 21.5 48 48 48h32c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48H240z">
+            </path>
+        </svg>
+    </label>
+
+
+    <div id="times"><br>
+        <div>seconds focussed: <span id="scoreshow">0</span></div>
+        <div>days: <span id="days" class="showtimes"></span></div>
+        <div>hours: <span id="hours" class="showtimes"></span></div>
+        <div>minutes: <span id="minutes" class="showtimes"></span></div>
+        <div>seconds: <span id="seconds" class="showtimes"></span></div>
+    </div><br>
+
+    </button>
+    <br><br><input type="text" id="searchInput" placeholder="search..." onkeyup="search()"><br><br>
+    <div id="track">
+        <img id="runner" src="earth.png" alt="runner">
+    </div>
+    <button class="button" class="studygo wrts study go" onclick="openurl('https://studygo.com')">studygo</button>
+    <button class="button" class="github grades ai gradesai"
+        onclick="openurl('https://heegarthur.github.io/gradesAI/')">grades
+        AI</button>
+    <button class="button" class="pomodoro timer pomodorotimer" onclick="openurl('https://pomofocus.io/')">pomodoro
+        timer</button>
+    <button class="button" class="coco cocotimer timer stopwatch"
+        onclick="openurl('https://cocotimer.com/stopwatch')">stopwatch</button>
+    <button class="button" class="randomtimer random timer github quest"
+        onclick="openurl('https://heegarthur.github.io/ivoarthur/smallwebsites//random_timer/randomtime.html')">random
+        timer</button>
+    <button class="button" class="flashcard flashcards remnote"
+        onclick="openurl('https://www.remnote.com/')">flashcards</button>
+    <button class="button" class="quizlet quiz" onclick="openurl('https://quizlet.com/nl')">quizlet</button>
+    <button class="button" class="studocu note notes"
+        onclick="openurl('https://www.studocu.com/en-us/home')">notes</button>
+    <button class="button" class="magister schedule" onclick="openurl('https://magister.nl')">magister</button>
+    <button class="button" class="notebook note notes ai notebooklm lm"
+        onclick="openurl('https://notebooklm.google.com')">notebooklm</button>
+    <button class="button" class="clock time relaxingclock relaxing"
+        onclick="openurl('https://www.relaxingclock.com/')">relaxing
+        clock</button>
+    <button class="button" class="classic music spotify playlist relaxing relax sound"
+        onclick="openurl('https://open.spotify.com/playlist/4MxPphYgkjR9C9PPFZ0aO1')">classic music</button>
+    <button class="button" class="mindmap mind map simplemindmap simple"
+        onclick="openurl('https://simplemindmap.com/')">simple
+        mindmap</button>
+    <button class="button" class="study sound youtube studysound classroum"
+        onclick="openurl('https://www.youtube.com/watch?v=ptDOgiwSzB8&pp=ygUac3R1ZHkgc291bmQgZXhhbSBjbGFzc3Jvb20%3D')">classroom
+        sound</button>
+    <button class="button" class="chatgpt chat gpt ai" onclick="openurl('https://chatgpt.com/')">chat gpt</button>
+    <button class="button" class="learn spanish learn dict" onclick="openurl('https://www.spanishdict.com/learn')">learn
+        spanish</button>
+    <button class="button" class="notion note notes notebook book"
+        onclick="openurl('https://notion.so/')">notion</button>
+    <button class="button" class="I miss my libary study sound background"
+        onclick="openurl('https://www.imissmylibrary.com/')">libary space</button>
+    <button class="button" class="sleep screen awake keep on" onclick="openurl('https://screenawake.com/')">keep screen
+        awake</button>
+    <button class="button" class="vscode visual studio code vs code programming coding"
+        onclick="openurl('https://vscode.dev/')">programming space</button>
+    <button class="button" class="to do list todo todolist dolist tasks"
+        onclick="openurl('https://onlinenotepad.app/todo')">to-do list</button>
+    <button class="button" class="to do todo ist todoist plan"
+        onclick="openurl('https://www.todoist.com/')">planner</button>
+
+
+
+    <div class="password-container">
+        <input aria-label="api-key"  type="password" id="password" value="" placeholder="enter api key from https://console.mistral.ai/home">
+        <div class="buttons">
+            <button id="toggle">show</button>
+            <button id="copy">copy</button>
+        </div>
+    </div>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="index.css">
+
+</body>
+
+</html>
